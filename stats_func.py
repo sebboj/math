@@ -1,4 +1,4 @@
-# takes in a list of numbers
+# takes in a list of numbers from console
 # calculates:
 # -mean
 # -median
@@ -6,6 +6,7 @@
 # -variance
 # -std dev
 # no libraries
+
 
 # square root approximation
 def babylonian_sqrt(num, tolerance=1e-7):
@@ -16,6 +17,7 @@ def babylonian_sqrt(num, tolerance=1e-7):
 
 nums = []
 total = 0 # sum of all numbers
+
 
 # collect input list of numbers and sum them as user inputs
 element = input('Input a list of numbers by typing a single number and hitting the [ENTER] key.'
@@ -32,9 +34,12 @@ while True:
 nums.sort() # O(nlogn)
 length = len(nums)
 
-# print data summary
-if length != 0:
 
+# print data summary
+if length == 0:
+    print('No data. No Summary.\nBye')
+
+else:
     # calculate mean
     mean = total/length
     print(f'Mean = {mean:.2f}')
@@ -74,9 +79,6 @@ if length != 0:
     # calculate std dev
     std_dev = babylonian_sqrt(variance)
     print(f'Standard Deviation = {std_dev:.2f}')
-
-else:
-    print('No data. No Summary.\nBye')
 
 
 
